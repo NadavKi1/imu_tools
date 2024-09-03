@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.5.1)
 cmake_policy(SET CMP0048 NEW)
 project(imu_filter_madgwick)
 
+# Set the C++ standard to C++11
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 find_package(catkin REQUIRED COMPONENTS roscpp sensor_msgs geometry_msgs tf2 tf2_geometry_msgs tf2_ros nodelet pluginlib message_filters dynamic_reconfigure)
 
 find_package(Boost REQUIRED COMPONENTS system thread)
