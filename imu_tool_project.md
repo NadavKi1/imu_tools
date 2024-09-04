@@ -42,7 +42,7 @@ Running the container from the image with "ros-kinetic-tf2-geometry-msgs" instal
 
 ```bash
 cd /home/nadavki/Desktop/imu_project
-run -it --rm -v /home/nadavki/Desktop/imu_project/imutool_k_ws:/home/root/imutool_k_ws magicvoxl:withGeometry2 bash
+docker run -it --rm -v /home/nadavki/Desktop/imu_project/imutool_k_ws:/home/root/imutool_k_ws magicvoxl:withGeometry2 bash
 ```
 
 **<u>note:</u>** -v flag means shared volume. This means that any changes made locally at `/home/nadavki/Desktop/imu_project/imutool_k_ws` will also affect the internal volume inside the docker container.
@@ -95,6 +95,8 @@ chmod +x /home/root/imutool_k_ws/src/imu_tools_kinetic/imu_filter_madgwick/cfg/I
 ```
 
 In the CMakeLists.txt, Add these lines after ```project(imu_filter_madgwick)```:
+
+**<u>note:</u>**: Update the CMakeLists.txt of  **`imu_complementary_filter`** and **`imu_filter_madgwick`**.
 
 ```bas
 set(CMAKE_CXX_STANDARD 11)
